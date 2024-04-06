@@ -11,8 +11,6 @@ import java.util.UUID;
 @Value
 @Valid
 public class ProdutoRequest {
-    @Id
-    private UUID idProduto;
     @NotNull
     private String descricao;
     private double preco;
