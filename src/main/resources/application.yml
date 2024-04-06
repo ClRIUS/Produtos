@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: /produtos/api
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: mongodb://localhost:27017/Produtos
+      auto-index-creation: true
