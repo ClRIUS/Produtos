@@ -1,5 +1,6 @@
 package com.cadastros.produtos.produto.domain;
 
+import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,11 +15,16 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Produto {
     @Id
-    private UUID idProduto;
+    private String idProduto;
     @NotNull
     private String descricao;
     @Builder.Default
     private double preco = 0.00;
-    @Builder.Default
-    private Unidade unidade = Unidade.UN;
+    private Unidade unidade;
+
+    public Produto(ProdutoRequest produtoRequest) {
+        this.descricao = produtoRequest.getDescricao();
+        this.preco = produtoRequest.getPreco();
+        this.unidade = produtoRequest.getUnidade();
+    }
 }

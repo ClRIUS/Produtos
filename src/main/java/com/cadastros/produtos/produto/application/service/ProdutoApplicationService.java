@@ -2,16 +2,28 @@ package com.cadastros.produtos.produto.application.service;
 
 import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import com.cadastros.produtos.produto.application.api.ProdutoResponse;
+import com.cadastros.produtos.produto.application.repository.ProdutoRepository;
+import com.cadastros.produtos.produto.domain.Produto;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class ProdutoApplicationService implements ProdutoService{
+
+    private final ProdutoRepository produtoRepository;
+
     @Override
     public ProdutoResponse cadastraProduto(ProdutoRequest produtoRequest) {
         log.info("[Start] ProdutoApplicationService - cadastraProduto");
+        Produto produto = produtoRepository.salva(new Produto(produtoRequest));
         log.info("[Finish] ProdutoApplicationService - cadastraProduto");
-        return null;
+        return ProdutoResponse.builder()
+                .descricao(produto.getDescricao())
+                .preco(produto.getPreco())
+                .unidade(produto.getUnidade())
+                .build();
     }
 }
