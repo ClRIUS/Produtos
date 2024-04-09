@@ -4,10 +4,12 @@ import com.cadastros.produtos.produto.domain.Unidade;
 import lombok.Builder;
 import lombok.Value;
 
+import java.util.UUID;
+
 @Value
 @Builder
 public class ProdutoResponse {
-    private String idProduto;
+    private  UUID idProduto;
     private String descricao;
     private double preco;
     private Unidade unidade;

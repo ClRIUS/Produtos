@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 @Log4j2
 @RequiredArgsConstructor
@@ -21,6 +23,7 @@ public class ProdutoApplicationService implements ProdutoService{
         Produto produto = produtoRepository.salva(new Produto(produtoRequest));
         log.info("[Finish] ProdutoApplicationService - cadastraProduto");
         return ProdutoResponse.builder()
+                .idProduto(UUID.randomUUID())
                 .descricao(produto.getDescricao())
                 .preco(produto.getPreco())
                 .unidade(produto.getUnidade())
