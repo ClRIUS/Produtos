@@ -1,5 +1,6 @@
 package com.cadastros.produtos.produto.application.service;
 
+import com.cadastros.produtos.produto.application.api.ProdutoListResponse;
 import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import com.cadastros.produtos.produto.application.api.ProdutoResponse;
 import com.cadastros.produtos.produto.application.repository.ProdutoRepository;
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -28,5 +30,12 @@ public class ProdutoApplicationService implements ProdutoService{
                 .preco(produto.getPreco())
                 .unidade(produto.getUnidade())
                 .build();
+    }
+
+    @Override
+    public List<ProdutoListResponse> buscaTodosProdutos() {
+        log.info("[Start] ProdutoApplicationService - buscaTodosProdutos");
+        log.info("[Finish] ProdutoApplicationService - buscaTodosProdutos");
+        return null;
     }
 }
