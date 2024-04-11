@@ -35,7 +35,8 @@ public class ProdutoApplicationService implements ProdutoService{
     @Override
     public List<ProdutoListResponse> buscaTodosProdutos() {
         log.info("[Start] ProdutoApplicationService - buscaTodosProdutos");
+        List<Produto> produtos = produtoRepository.buscaTodosProdutos();
         log.info("[Finish] ProdutoApplicationService - buscaTodosProdutos");
-        return null;
+        return ProdutoListResponse.converte(produtos);
     }
 }
