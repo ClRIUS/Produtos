@@ -3,7 +3,6 @@ package com.cadastros.produtos.produto.domain;
 import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
