@@ -26,4 +26,9 @@ public interface ProdutoAPI {
     @DeleteMapping(value = "/{idProduto}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaProduto(@PathVariable UUID idProduto);
+
+    @PatchMapping(value = "/{idProduto}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void alteraProduto(@PathVariable UUID idProduto,
+                       @Valid @RequestBody ProdutoAlteracaoRequest produtoAlteracaoRequest);
 }
