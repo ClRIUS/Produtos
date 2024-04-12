@@ -40,4 +40,10 @@ public class ProdutoController implements ProdutoAPI{
         log.info("[finish] ProdutoController - buscaProduto");
         return produtoDetalhado;
     }
+
+    @Override
+    public void deletaProduto(UUID idProduto) {
+        log.info("[start] ProdutoController - deletaProduto");
+        log.info("[finish] ProdutoController - deletaProduto");
+    }
 }

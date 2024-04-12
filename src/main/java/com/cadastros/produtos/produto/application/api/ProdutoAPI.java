@@ -22,4 +22,8 @@ public interface ProdutoAPI {
     @GetMapping(value = "/{idProduto}")
     @ResponseStatus(code = HttpStatus.OK)
     ProdutoDetalhadoResponse buscaProduto(@PathVariable UUID idProduto);
+
+    @DeleteMapping(value = "/{idProduto}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaProduto(@PathVariable UUID idProduto);
 }
