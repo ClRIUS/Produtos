@@ -35,7 +35,9 @@ public class ProdutoInfraRepository implements ProdutoRepository {
     @Override
     public Produto buscaProdutoPorId(UUID idProduto) {
         log.info("[Start] ProdutoInfraRepository - buscaProdutoPorId");
+        Produto produto = produtoSpringDataMongoDB.findById(idProduto)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado!"));
         log.info("[Finish] ProdutoInfraRepository - buscaProdutoPorId");
-        return null;
+        return produto;
     }
 }
