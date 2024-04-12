@@ -1,5 +1,6 @@
 package com.cadastros.produtos.produto.application.service;
 
+import com.cadastros.produtos.produto.application.api.ProdutoDetalhadoResponse;
 import com.cadastros.produtos.produto.application.api.ProdutoListResponse;
 import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import com.cadastros.produtos.produto.application.api.ProdutoResponse;
@@ -38,5 +39,12 @@ public class ProdutoApplicationService implements ProdutoService{
         List<Produto> produtos = produtoRepository.buscaTodosProdutos();
         log.info("[Finish] ProdutoApplicationService - buscaTodosProdutos");
         return ProdutoListResponse.converte(produtos);
+    }
+
+    @Override
+    public ProdutoDetalhadoResponse buscaProdutoPorId(UUID idProduto) {
+        log.info("[Start] ProdutoApplicationService - buscaProdutoPorId");
+        log.info("[Finish] ProdutoApplicationService - buscaProdutoPorId");
+        return null;
     }
 }
