@@ -10,4 +10,5 @@ public interface ProdutoRepository {
     Produto salva(Produto produto);
     List<Produto> buscaTodosProdutos();
     Produto buscaProdutoPorId(UUID idProduto);
+    void deletaProdutoPorId(Produto produto);
 }

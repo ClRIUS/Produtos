@@ -40,4 +40,11 @@ public class ProdutoInfraRepository implements ProdutoRepository {
         log.info("[Finish] ProdutoInfraRepository - buscaProdutoPorId");
         return produto;
     }
+
+    @Override
+    public void deletaProdutoPorId(Produto produto) {
+        log.info("[Start] ProdutoInfraRepository - deletaProdutoPorId");
+        produtoSpringDataMongoDB.delete(produto);
+        log.info("[Finish] ProdutoInfraRepository - deletaProdutoPorId");
+    }
 }
