@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -29,5 +30,12 @@ public class ProdutoController implements ProdutoAPI{
         List<ProdutoListResponse> produtos = produtoService.buscaTodosProdutos();
         log.info("[finish] ProdutoController - listaTodosProdutos");
         return produtos;
+    }
+
+    @Override
+    public ProdutoDetalhadoResponse buscaProduto(UUID idProduto) {
+        log.info("[start] ProdutoController - buscaProduto");
+        log.info("[finish] ProdutoController - buscaProduto");
+        return null;
     }
 }
