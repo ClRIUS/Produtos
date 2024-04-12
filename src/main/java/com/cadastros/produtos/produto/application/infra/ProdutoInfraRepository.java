@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -29,5 +30,12 @@ public class ProdutoInfraRepository implements ProdutoRepository {
         List<Produto> todosProdutos = produtoSpringDataMongoDB.findAll();
         log.info("[Finish] ProdutoInfraRepository - buscaTodosProdutos");
         return todosProdutos;
+    }
+
+    @Override
+    public Produto buscaProdutoPorId(UUID idProduto) {
+        log.info("[Start] ProdutoInfraRepository - buscaProdutoPorId");
+        log.info("[Finish] ProdutoInfraRepository - buscaProdutoPorId");
+        return null;
     }
 }
