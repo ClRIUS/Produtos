@@ -1,9 +1,6 @@
 package com.cadastros.produtos.produto.application.service;
 
-import com.cadastros.produtos.produto.application.api.ProdutoDetalhadoResponse;
-import com.cadastros.produtos.produto.application.api.ProdutoListResponse;
-import com.cadastros.produtos.produto.application.api.ProdutoRequest;
-import com.cadastros.produtos.produto.application.api.ProdutoResponse;
+import com.cadastros.produtos.produto.application.api.*;
 import com.cadastros.produtos.produto.application.repository.ProdutoRepository;
 import com.cadastros.produtos.produto.domain.Produto;
 import lombok.RequiredArgsConstructor;
@@ -55,5 +52,11 @@ public class ProdutoApplicationService implements ProdutoService{
         Produto produto = produtoRepository.buscaProdutoPorId(idProduto);
         produtoRepository.deletaProdutoPorId(produto);
         log.info("[Finish] ProdutoApplicationService - deletaProduto");
+    }
+
+    @Override
+    public void alteraProduto(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+        log.info("[Start] ProdutoApplicationService - alteraProduto");
+        log.info("[Finish] ProdutoApplicationService - alteraProduto");
     }
 }

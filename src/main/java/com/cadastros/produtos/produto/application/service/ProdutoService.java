@@ -1,9 +1,6 @@
 package com.cadastros.produtos.produto.application.service;
 
-import com.cadastros.produtos.produto.application.api.ProdutoDetalhadoResponse;
-import com.cadastros.produtos.produto.application.api.ProdutoListResponse;
-import com.cadastros.produtos.produto.application.api.ProdutoRequest;
-import com.cadastros.produtos.produto.application.api.ProdutoResponse;
+import com.cadastros.produtos.produto.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,4 +10,5 @@ public interface ProdutoService {
     List<ProdutoListResponse> buscaTodosProdutos();
     ProdutoDetalhadoResponse buscaProdutoPorId(UUID idProduto);
     void deletaProduto(UUID idProduto);
+    void alteraProduto(ProdutoAlteracaoRequest produtoAlteracaoRequest);
 }
