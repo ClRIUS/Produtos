@@ -55,8 +55,11 @@ public class ProdutoApplicationService implements ProdutoService{
     }
 
     @Override
-    public void alteraProduto(ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+    public void alteraProduto(UUID idProduto, ProdutoAlteracaoRequest produtoAlteracaoRequest) {
         log.info("[Start] ProdutoApplicationService - alteraProduto");
+        Produto produto = produtoRepository.buscaProdutoPorId(idProduto);
+        produto.alteraProduto(produtoAlteracaoRequest);
+        produtoRepository.salva(produto);
         log.info("[Finish] ProdutoApplicationService - alteraProduto");
     }
 }

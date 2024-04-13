@@ -1,5 +1,6 @@
 package com.cadastros.produtos.produto.domain;
 
+import com.cadastros.produtos.produto.application.api.ProdutoAlteracaoRequest;
 import com.cadastros.produtos.produto.application.api.ProdutoRequest;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -26,6 +27,12 @@ public class Produto {
 
     public Produto(ProdutoRequest produtoRequest) {
         this.idProduto = UUID.randomUUID();
+        this.descricao = produtoRequest.getDescricao();
+        this.preco = produtoRequest.getPreco();
+        this.unidade = produtoRequest.getUnidade();
+    }
+
+    public void alteraProduto(ProdutoAlteracaoRequest produtoRequest) {
         this.descricao = produtoRequest.getDescricao();
         this.preco = produtoRequest.getPreco();
         this.unidade = produtoRequest.getUnidade();
